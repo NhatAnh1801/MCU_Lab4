@@ -413,10 +413,10 @@ void uart_communication_fsm(){
 				command_flag = 0;
 				//TODO
 				 if(!strcmp((char*)command_data, "RST")){
-		        ADC_read();
-		        HAL_UART_Transmit(&huart2, (uint8_t*)previous_packet, strlen(previous_packet), 1000);
-						uart_state = OK_STATE;
-						setTimer1(300);
+					 ADC_read();
+					 HAL_UART_Transmit(&huart2, (uint8_t*)previous_packet, strlen(previous_packet), 1000);
+					 uart_state = OK_STATE;
+					 setTimer1(300);
 				 }
 				 memset(command_data, '\0', MAX_BUFFER_SIZE);
 			}
