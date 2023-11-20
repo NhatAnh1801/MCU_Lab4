@@ -413,8 +413,8 @@ void uart_communication_fsm(){
 				command_flag = 0;
 				//TODO
 				 if(!strcmp((char*)command_data, "RST")){
-		                ADC_read();
-		                HAL_UART_Transmit(&huart2, (uint8_t*)previous_packet, strlen(previous_packet), 1000);
+		        ADC_read();
+		        HAL_UART_Transmit(&huart2, (uint8_t*)previous_packet, strlen(previous_packet), 1000);
 						uart_state = OK_STATE;
 						setTimer1(300);
 				 }
@@ -427,7 +427,6 @@ void uart_communication_fsm(){
 			if(timer1_flag == 1){
 				setTimer1(3000);
 				//TODO
-				//Old ADC Value
 				HAL_UART_Transmit(&huart2, (uint8_t*)previous_packet, strlen(previous_packet), 50);
 			}
 			//check command_flag
